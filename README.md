@@ -5,4 +5,11 @@ consola de estilo quake 2 o counter strike.
 en la escena "Console" esta el ejemplo de como se tiene que usar. "Main Camera" tiene el script "ExampleConsole" donde esta la creación de los comandos a usar.
 En el método "Start" se llama al método "CreateCommands" donde se crean los comandos en sí.
 
+ver en escala 16:9
+la consola se abre con F1, pero eso se puede configurar desde el inspector.
+
+
+
+
+
 
