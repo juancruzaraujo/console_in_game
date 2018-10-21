@@ -27,12 +27,15 @@ namespace InGameConsole
 
         public static ManagerConsola instance;
         public KeyCode ConsoleOpenKey;
-        //public Image imgFondo;
+        //public Sprite imgFondo;
 
         //objetos de la consola
 
-        [SerializeField]
+        //[SerializeField]
         private Image _backGroundLogImg;
+
+        //[SerializeField]
+        public Sprite _backGroundLogSprite;
 
         [SerializeField]
         private Font _LogFont;
@@ -60,6 +63,7 @@ namespace InGameConsole
         private bool _ShowSintaxisError; //muestra error si el comando no existe
         private bool _PauseGame; //pausa el juego si la consola se abre
 
+        
 
         #region Propiedades
 
@@ -67,12 +71,14 @@ namespace InGameConsole
         {
             set
             {
-                _backGroundLogImg.sprite = value;
-                
+                _backGroundLogSprite = value;
+                _backGroundLogImg.sprite = _backGroundLogSprite;
+
             }
             get
             {
-               return _backGroundLogImg.sprite;
+                _backGroundLogImg.sprite = _backGroundLogSprite;
+                return _backGroundLogSprite;
             }
         }
 
@@ -193,6 +199,8 @@ namespace InGameConsole
             txtLogConsola = GameObject.Find("txtLogConsole").GetComponent<Text>();
 
             _backGroundLogImg = GameObject.Find("imgBack").GetComponent<Image>();
+            _backGroundLogSprite = LogBackGroundImage;
+            _backGroundLogImg.sprite = _backGroundLogSprite;
 
             _LineaIngresada = new List<string>();
             _ComandoIngresado = new List<string>();
@@ -215,13 +223,13 @@ namespace InGameConsole
         void Start()
         {
 
-           
+            _backGroundLogImg.sprite = _backGroundLogSprite;
             //esto nunca funciono, averiguar bien como se hace y no borrar estes comentarios
             //Font miFuente = (Font)Resources.Load("Assets/Consola/Arte/Fuentes/Ubuntu_Mono/UbuntuMono-R_1.ttf", typeof(Font));
             //txtLogConsola.font = miFuente;
             //if (_comandosIniciados == false)
             //{
-                //Iniciar_Comandos();
+            //Iniciar_Comandos();
             //}
 
 
@@ -344,7 +352,7 @@ namespace InGameConsole
             CanvasConsola.GetComponent<Canvas>().enabled = false;
             txtImputConsola.image.enabled = false;
             txtImputConsola.textComponent.color = new Color(255, 255, 255, 255);
-            LogBackGroundImage = null;
+            //LogBackGroundImage = null;
 
 
             _ShowSintaxisError = true; //te dice si el comando esta mal escrito o no
