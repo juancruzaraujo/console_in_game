@@ -24,6 +24,16 @@ en el ejemplo se pone en la cámara la clase "EscampleConsole" que es la que cre
 
 con el tiempo espero ir agregando mas cosas y utilidades.
 
+en el ejemplo, para poner colores solidos con una imagen de fondo.
+/addimg q3skull
+/colorfondo 255 255 255 255
+
+para agregar comandos propios
+Commands.commandInstance.AddCommand("tu comando", "descripción", método, "descripción de los parámetros");
+
+
+email: juancruzaraujo@gmail.com
+
 
 
 
