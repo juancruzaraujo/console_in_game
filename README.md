@@ -24,8 +24,6 @@ en el ejemplo se pone en la cámara la clase "EscampleConsole" que es la que cre
 
 con el tiempo espero ir agregando mas cosas y utilidades.
 
-mi email, juancruzaraujo@gmail.com
-
 
 
 
